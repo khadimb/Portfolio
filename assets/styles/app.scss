@@ -13,9 +13,28 @@ body {
 .footer {
     background-color: $primary;
 }
-.section-title{
+.title {
     color: $secondary;
     text-transform: uppercase;
-    font-weight: 700;
-    
+    font-weight: 700;   
+}
+.login {
+    text-decoration: none;
+    color: $light;
+}
+.login:hover {
+    color: $light;
+}
+label{
+    color: $primary;
+    font-weight: 400;
+    margin: 5px;
+    font-size: larger;
+}
+.btn-submit {
+    background-color: $primary;
+    color: $light;
+}
+.btn-submit:hover {
+    color: $danger;
 }
