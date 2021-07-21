@@ -1,0 +1,17 @@
+<div class="container-fluid col-11">
+    <div class="row my-4 g-4">
+        {% for projet in projets %}
+        <div class="col col-md-6 col-lg-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title"> {{  projet.nom }} </h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">{{ projet.description }}</p>
+                </div>
+            </div>
+        </div> 
+        {% else %}
+            Pas de projet actuellement 
+        {% endfor %}
+    </div>
+</div>

@@ -3,6 +3,7 @@
 @import "navbar.scss";
 @import "banner.scss";
 @import "variables.scss";
+@import "card.scss";
 
 body {
     background-color: $light;
@@ -11,4 +12,10 @@ body {
 }
 .footer {
     background-color: $primary;
+}
+.section-title{
+    color: $secondary;
+    text-transform: uppercase;
+    font-weight: 700;
+    
 }

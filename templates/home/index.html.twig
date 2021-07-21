@@ -3,4 +3,9 @@
 {% block banner %}
     {% include "includes/_banner.html.twig" %}
 {% endblock %}
-{% block body %}{% endblock %}
+{% block body %}
+    <section>
+        <h2 class="section-title m-3">Projets</h2>
+        {% include "home/_projet.html.twig" %}
+    </section>
+{% endblock %}
