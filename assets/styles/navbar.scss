@@ -1,0 +1,17 @@
+@import "variables.scss";
+
+.nav-link {
+    color: $light;
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: $danger;
+}
+
+.nav-link:focus {
+    color: $danger;
+}
+nav {
+    background-color: $primary;
+}
