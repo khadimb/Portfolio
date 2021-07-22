@@ -1,0 +1,18 @@
+@import "variables.scss";
+
+.bio-text {
+    font-size: 2em;
+    color: $primary;
+    display: flex;
+    align-items: center;
+}
+.bio-section {
+    height: 100%;
+}
+.bio-card {
+    border: 1px solid $primary;
+}
+.bio-photo {
+    max-width: 40%;
+    height: 50%;
+}
