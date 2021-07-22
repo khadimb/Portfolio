@@ -8,8 +8,12 @@
 
 body {
     background-color: $light;
+    background-image: url("/assets/images/grunge-wall.png");
     font-family: $text-font;
     color: $light;
+}
+h1{
+    font-size: 3em;
 }
 .footer {
     background-color: $primary;

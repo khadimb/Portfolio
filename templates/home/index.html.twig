@@ -5,11 +5,15 @@
 {% endblock %}
 {% block body %}
     <section class="bio-section">
-        <h2 class="title m-3">Bio</h2>
+        <h2 class="title m-5">Présentation</h2>
         {% include "home/_bio.html.twig" %}
     </section>
     <section>
-        <h2 class="title m-3">Projets</h2>
+        <h2 class="title m-5">Projets</h2>
         {% include "home/_projet.html.twig" %}
+    </section>
+    <section>
+        <h2 class="title m-5">Contact</h2>
+        {% include "home/_contact.html.twig" %}
     </section>
 {% endblock %}
