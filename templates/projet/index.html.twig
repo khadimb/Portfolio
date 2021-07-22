@@ -8,20 +8,20 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Nom</th>
                 <th>Lien</th>
                 <th>Description</th>
+                <th>Catégorie</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for projet in projets %}
             <tr>
-                <td>{{ projet.id }}</td>
                 <td>{{ projet.Nom }}</td>
                 <td>{{ projet.Lien }}</td>
                 <td>{{ projet.description }}</td>
+                <td>{{ projet.categorie.nom }}</td>
                 <td>
                     <a href="{{ path('projet_show', {'id': projet.id}) }}" class="btn btn-primary m-1">Afficher</a>
                     <a href="{{ path('projet_edit', {'id': projet.id}) }}" class="btn btn-success m-1">Modifier</a>

@@ -3,8 +3,9 @@
 namespace App\DataFixtures;
 
 use App\Entity\Projet;
-use Doctrine\Bundle\FixturesBundle\Fixture;
+use App\DataFixtures\CategorieFixtures;
 use Doctrine\Persistence\ObjectManager;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 
 class ProjetFixtures extends Fixture
 {   
@@ -45,6 +46,7 @@ class ProjetFixtures extends Fixture
             $projet->setLien($data['Lien']);
             $projet->setPhoto($data['photo']);
             $projet->setDescription($data['description']);
+            $projet->setCategorie($this->getReference('categorie_' . rand(0, count(CategorieFixtures::CATEGORIES) - 1)));
             $manager->persist($projet);  
         }
 
