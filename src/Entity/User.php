@@ -40,6 +40,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $firstname;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Biographie::class, mappedBy="User", cascade={"persist", "remove"})
+     */
+    private $biographie;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -137,6 +142,28 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setFirstname(string $firstname): self
     {
         $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    public function getBiographie(): ?Biographie
+    {
+        return $this->biographie;
+    }
+
+    public function setBiographie(?Biographie $biographie): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($biographie === null && $this->biographie !== null) {
+            $this->biographie->setUser(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($biographie !== null && $biographie->getUser() !== $this) {
+            $biographie->setUser($this);
+        }
+
+        $this->biographie = $biographie;
 
         return $this;
     }
