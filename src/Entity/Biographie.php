@@ -4,9 +4,13 @@ namespace App\Entity;
 
 use App\Repository\BiographieRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=BiographieRepository::class)
+ * @Vich\Uploadable
  */
 class Biographie
 {
@@ -27,6 +31,18 @@ class Biographie
      */
     private $User;
 
+    /**
+    * @Vich\UploadableField(mapping="photo_file", fileNameProperty="photo")
+    * @Assert\File(
+    *      maxSize = "2M",
+    *      mimeTypes = {
+    *              "image/jpg", "image/jpg",
+    *              "image/jpeg", "image/jpeg",
+    *              "image/png", "image/webp"},
+    * )
+    * @var File|null
+    */
+    private $photoFile;
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
@@ -69,6 +85,30 @@ class Biographie
     public function setPhoto(?string $photo): self
     {
         $this->photo = $photo;
+
+        return $this;
+    }
+
+    /**
+     * Get )
+     *
+     * @return  File|null
+     */ 
+    public function getPhotoFile()
+    {
+        return $this->photoFile;
+    }
+
+    /**
+     * Set )
+     *
+     * @param  File|null  $photoFile  )
+     *
+     * @return  self
+     */ 
+    public function setPhotoFile($photoFile)
+    {
+        $this->photoFile = $photoFile;
 
         return $this;
     }
