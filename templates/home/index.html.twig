@@ -4,15 +4,15 @@
     {% include "includes/_banner.html.twig" %}
 {% endblock %}
 {% block body %}
-    <section class="bio-section">
+    <section class="bio-section" id="bio-section">
         <h2 class="title m-5">Présentation</h2>
         {% include "home/_bio.html.twig" %}
     </section>
-    <section>
+    <section id="projet-section" >
         <h2 class="title m-5">Projets</h2>
         {% include "home/_projet.html.twig" %}
     </section>
-    <section>
+    <section id="contact-section">
         <h2 class="title m-5">Contact</h2>
         {% include "home/_contact.html.twig" %}
     </section>
