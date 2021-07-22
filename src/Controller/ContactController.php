@@ -8,28 +8,18 @@ use Symfony\Component\Mime\Email;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
-use App\Repository\ProjetRepository;
-use App\Repository\BiographieRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-/**
- * @Route("/", name="portfolio")
- */
-class HomeController extends AbstractController
+class ContactController extends AbstractController
 {
     public const MAILER_TO = "contact@khadim.com";
     public const MAILER_SUBJECT = "Nouveau message";
-    
     /**
-     * @Route("/", name="_accueil")
+     * @Route("/contact", name="contact")
      */
-    public function index(
-        ProjetRepository $projetRepository, 
-        BiographieRepository $biographieRepository,
-        Request $request, 
-        MailerInterface $mailer): Response
+    public function contact(Request $request, MailerInterface $mailer): Response
     {
         $contact = new Contact();
         $contactForm = $this->createForm(ContactType::class, $contact);
@@ -47,11 +37,8 @@ class HomeController extends AbstractController
                 nous vous contacterons ultérieurement !');
             return $this->redirectToRoute('contact');
         }
-        return $this->render('home/index.html.twig', [
-            'projets' => $projetRepository->findAll(),
-            'biographies' => $biographieRepository->findAll(),
+        return $this->render('contact/index.html.twig', [
             'contact' => $contactForm->createView()
-            ]);
-            
+        ]);
     }
 }
