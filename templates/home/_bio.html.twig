@@ -1,0 +1,10 @@
+<div class="container-fluid col-11 bio-card">
+    <div class="row m-3">
+        {% for biographie in biographies %}
+                <img src="{{ biographie.photo }}" alt="photo-khadim" class="bio-photo col-6">
+                <p class="bio-text col-6">{{ biographie.description }}</p>
+            {% else %}
+                Pas de biographie
+            {% endfor %}
+    </div>
+</div>
