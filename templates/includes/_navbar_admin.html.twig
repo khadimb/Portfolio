@@ -3,11 +3,8 @@
         <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
             <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link bouton-retour " href="{{ path('portfolio_accueil') }}">Retour au site</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('admin')}}">Accueil Admin</a>
                 </li>
@@ -19,6 +16,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Message</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link bouton-retour " href="{{ path('portfolio_accueil') }}">Retour au site</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link bouton-deco " href="{{ path('deconnexion') }}">Déconnexion</a>
                 </li>
             </ul>
         </div>

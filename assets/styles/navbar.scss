@@ -15,3 +15,17 @@
 nav {
     background-color: $primary;
 }
+.bouton-retour {
+    background-color: $secondary;
+    color: $light;
+}
+.bouton-retour:hover {
+    color: $danger;
+}
+.bouton-deco {
+    background-color: $danger;
+    color: $light;
+}
+.bouton-deco:hover {
+    color: $primary;
+}
